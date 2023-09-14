@@ -1,0 +1,17 @@
+{
+    "data": [{
+        "questionText": "Who created Flutter?",
+       "op1":"Test1",
+       "op2":"Test2",
+       "op3":"Test3",
+       "op4":"Test4"
+       },
+       {
+      "questionText": "What is Flutter?",
+       "op1":"Android Development Kit",
+       "op2":"IOS Development Kit",
+       "op3":"Web Development Kit",
+       "op4":"SDK to build beautiful IOS, Android, Web & Desktop Native Apps"
+    }
+    ]
+}
