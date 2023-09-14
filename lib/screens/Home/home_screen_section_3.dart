@@ -65,28 +65,29 @@ class HomeScreenSection3 extends StatelessWidget {
                   // Spacer(),
                   Expanded(
                     child: Container(
-                        margin: const EdgeInsets.only(left: 1),
+                        margin: const EdgeInsets.only(
+                            left: 7, right: 7, bottom: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            IconButton(
-                              color: Colors.white,
-                              onPressed: () {},
-                              icon: Image.asset(
-                                imageObj.getImage('go'),
-                                height: 28,
-                              ),
+                            Image.asset(
+                              imageObj.getImage('go'),
+                              height: 28,
                             ),
+                            // IconButton(
+                            //   color: Colors.white,
+                            //   onPressed: () {},
+                            //   icon: Image.asset(
+                            //     imageObj.getImage('go'),
+                            //     height: 28,
+                            //   ),
+                            // ),
                             // Spacer(),
-                            IconButton(
-                              color: Colors.white,
-                              onPressed: () {},
-                              icon: Image.asset(
-                                imageObj.getImage('watch_videos_bg'),
-                                // width: 100,
-                                height: 28,
-                              ),
+                            Image.asset(
+                              imageObj.getImage('watch_videos_bg'),
+                              // width: 100,
+                              height: 70,
                             ),
                           ],
                         )),
@@ -144,27 +145,28 @@ class HomeScreenSection3 extends StatelessWidget {
                   // Spacer(),
                   Expanded(
                     child: Container(
-                        margin: const EdgeInsets.only(left: 1),
+                        margin: const EdgeInsets.only(
+                            left: 7, right: 7, bottom: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            IconButton(
-                              color: Colors.white,
-                              onPressed: () {},
-                              icon: Image.asset(
-                                imageObj.getImage('go'),
-                                height: 28,
-                              ),
+                            Image.asset(
+                              imageObj.getImage('go'),
+                              height: 28,
                             ),
+                            // IconButton(
+                            //   color: Colors.white,
+                            //   onPressed: () {},
+                            //   icon: Image.asset(
+                            //     imageObj.getImage('go'),
+                            //     height: 28,
+                            //   ),
+                            // ),
                             // Spacer(),
-                            IconButton(
-                              color: Colors.white,
-                              onPressed: () {},
-                              icon: Image.asset(
-                                imageObj.getImage('roadmap_bg'),
-                                height: 28,
-                              ),
+                            Image.asset(
+                              imageObj.getImage('roadmap_bg'),
+                              height: 70,
                             ),
                           ],
                         )),
