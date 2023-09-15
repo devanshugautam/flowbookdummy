@@ -30,7 +30,7 @@ class _FlowBookTalentBoardState extends State<FlowBookTalentBoard> {
   }
 
   void _startAutoAnimation() {
-    _timer = Timer.periodic(Duration(seconds: 2), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
       setState(() {
         _zoomIn = !_zoomIn;
         _zoomedImageHeight =
@@ -48,7 +48,7 @@ class _FlowBookTalentBoardState extends State<FlowBookTalentBoard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 15.0, left: 10, right: 10),
+      margin: const EdgeInsets.only(top: 15.0, left: 10, right: 10),
       height: 150,
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -65,50 +65,48 @@ class _FlowBookTalentBoardState extends State<FlowBookTalentBoard> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top: 25, left: 14),
-                  child: const Text(
-                    "Flowbook Talent Board",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 14, top: 5),
-                  child: const Text(
-                    "Share Your Talent",
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Container(
-                  margin: EdgeInsets.only(left: 4),
-                  child: IconButton(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: const EdgeInsets.only(top: 25, left: 14),
+                child: const Text(
+                  "Flowbook Talent Board",
+                  style: TextStyle(
+                    fontSize: 20,
                     color: Colors.white,
-                    onPressed: () {},
-                    icon: Image.asset(
-                      imageObj.getImage('go'),
-                      height: 28,
-                    ),
                   ),
                 ),
-              ],
-            ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 14, top: 5),
+                child: const Text(
+                  "Share Your Talent",
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              const Spacer(),
+              Container(
+                margin: const EdgeInsets.only(left: 4),
+                child: IconButton(
+                  color: Colors.white,
+                  onPressed: () {},
+                  icon: Image.asset(
+                    imageObj.getImage('go'),
+                    height: 28,
+                  ),
+                ),
+              ),
+            ],
           ),
           const Spacer(),
           Center(
             child: AnimatedContainer(
-              duration:
-                  Duration(seconds: 2), // Adjust the animation speed as needed.
+              duration: const Duration(
+                  seconds: 2), // Adjust the animation speed as needed.
               curve: Curves.easeInOut,
               height: _zoomedImageHeight,
               child: Image.asset(
