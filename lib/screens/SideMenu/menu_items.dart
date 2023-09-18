@@ -22,12 +22,12 @@ class MenuItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Container(
-            margin: EdgeInsets.only(right: 35),
+            margin: const EdgeInsets.only(right: 35),
             child: Image.asset(imageObj.getImage(imageName), height: 22),
           ),
           Text(
             itemName,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.w400,
             ),
           )

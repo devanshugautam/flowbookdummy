@@ -2,6 +2,6 @@
 import 'package:flutter/material.dart';
 
 // Local import
-import 'screens/Home/home_screen.dart';
+import 'screens/Home/main_screen.dart';
 
-void main() => runApp(MaterialApp(home: Home()));
+void main() => runApp(MaterialApp(home: MainScreen()));
