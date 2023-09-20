@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../services/get_images.dart';
 
+// screen
+import '../Home/home.dart';
+
 class Roadmap extends StatefulWidget {
   const Roadmap({super.key});
 
@@ -19,33 +22,33 @@ class ContainerData {
 
 class _RoadmapState extends State<Roadmap> {
   GetImage imageObj = GetImage();
-  GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
+  final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
   var isBorder = false;
 
   final List<ContainerData> containers = [
     ContainerData(
-      Color.fromRGBO(231, 108, 48, 1),
+      const Color.fromRGBO(231, 108, 48, 1),
       'Academic Roadmap',
       'home',
-      Color.fromRGBO(133, 61, 85, 1),
+      const Color.fromRGBO(133, 61, 85, 1),
     ),
     ContainerData(
-      Color.fromRGBO(44, 199, 183, 1),
+      const Color.fromRGBO(44, 199, 183, 1),
       'Non Academic Roadmap',
       'home',
-      Color.fromRGBO(32, 137, 125, 1),
+      const Color.fromRGBO(32, 137, 125, 1),
     ),
     ContainerData(
-      Color.fromRGBO(223, 98, 97, 1),
+      const Color.fromRGBO(223, 98, 97, 1),
       'Principal Mandated Roadmap',
       'home',
-      Color.fromRGBO(198, 29, 29, 1),
+      const Color.fromRGBO(198, 29, 29, 1),
     ),
     ContainerData(
-      Color.fromRGBO(239, 93, 162, 1),
+      const Color.fromRGBO(239, 93, 162, 1),
       'Full Roadmap',
       'home',
-      Color.fromRGBO(144, 30, 170, 1),
+      const Color.fromRGBO(144, 30, 170, 1),
     ),
     ContainerData(
       Colors.deepPurple.shade300,
@@ -54,22 +57,22 @@ class _RoadmapState extends State<Roadmap> {
       Colors.deepPurple.shade800,
     ),
     ContainerData(
-      Color.fromRGBO(64, 172, 247, 1),
+      const Color.fromRGBO(64, 172, 247, 1),
       'Select Elective',
       'home',
-      Color.fromRGBO(24, 95, 142, 1),
+      const Color.fromRGBO(24, 95, 142, 1),
     ),
     ContainerData(
-      Color.fromRGBO(168, 110, 13, 1),
+      const Color.fromRGBO(168, 110, 13, 1),
       'Statistics',
       'home',
-      Color.fromRGBO(115, 73, 1, 1),
+      const Color.fromRGBO(115, 73, 1, 1),
     ),
     ContainerData(
-      Color.fromRGBO(168, 110, 13, 1),
+      const Color.fromRGBO(168, 110, 13, 1),
       'Statistics',
       'pick_activity_illustration',
-      Color.fromRGBO(115, 73, 1, 1),
+      const Color.fromRGBO(115, 73, 1, 1),
     ),
   ];
 
@@ -81,7 +84,13 @@ class _RoadmapState extends State<Roadmap> {
         // App Bar
         appBar: AppBar(
           leading: InkWell(
-            onTap: () => Navigator.pop(context),
+            onTap: () => {
+              print("--> here in roadmap section of bottom navigation"),
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Home()),
+              )
+            },
             child: const Icon(Icons.arrow_back, color: Colors.white),
           ),
           backgroundColor: Colors.deepPurple.shade700,
@@ -108,7 +117,7 @@ class _RoadmapState extends State<Roadmap> {
           ),
           child: NotificationListener<OverscrollIndicatorNotification>(
             onNotification: (overscroll) {
-              overscroll.disallowGlow();
+              overscroll.disallowIndicator();
               return true;
             },
             child: ListView.builder(

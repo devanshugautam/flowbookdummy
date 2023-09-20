@@ -21,43 +21,53 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
 
+  static final List<Widget> _pages = <Widget>[
+    const Home(),
+    Container(),
+    const Roadmap(),
+    Container(),
+    Container(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       key: _drawerKey,
       // App Bar
-      appBar: AppBar(
-        // scrolledUnderElevation: 4.0,
-        // shadowColor: Theme.of(context).shadowColor,
-        leading: InkWell(
-          onTap: () => _drawerKey.currentState?.openDrawer(),
-          child: Icon(Icons.menu, color: Colors.black87),
-        ),
-        backgroundColor: Colors.white,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Image.asset(imageObj.getImage('search_ques')),
-            iconSize: 30.0,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Image.asset(imageObj.getImage('scan')),
-            iconSize: 30.0,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Image.asset(imageObj.getImage('shipping_color')),
-            iconSize: 30.0,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Image.asset(imageObj.getImage('logout')),
-            iconSize: 30.0,
-          ),
-        ],
-      ),
+      appBar: _selectedIndex != 2
+          ? AppBar(
+              // scrolledUnderElevation: 4.0,
+              // shadowColor: Theme.of(context).shadowColor,
+              leading: InkWell(
+                onTap: () => _drawerKey.currentState?.openDrawer(),
+                child: const Icon(Icons.menu, color: Colors.black87),
+              ),
+              backgroundColor: Colors.white,
+              actions: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(imageObj.getImage('search_ques')),
+                  iconSize: 30.0,
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(imageObj.getImage('scan')),
+                  iconSize: 30.0,
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(imageObj.getImage('shipping_color')),
+                  iconSize: 30.0,
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(imageObj.getImage('logout')),
+                  iconSize: 30.0,
+                ),
+              ],
+            )
+          : null,
       //  drawer
       drawer: AppDrawer(imageObj: imageObj),
       // Bottom Navigation Bar
@@ -112,21 +122,21 @@ class _MainScreenState extends State<MainScreen> {
         // selectedIconTheme: IconThemeData.fallback(),
         // selectedFontSize: 15.0,
         onTap: (index) => {
-          // print("--> ${index}"),
+          print("--> ${index}"),
           setState(() {
-            if (index == 2) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Roadmap()),
-              );
-            }
+            // if (index == 2) {
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(builder: (context) => const Roadmap()),
+            // );
+            // }
             _selectedIndex = index; // Update the selected index
           })
         },
         // onTap: _onItemTapped,
       ),
       //  Body
-      body: const Home(),
+      body: _pages.elementAt(_selectedIndex),
     ));
   }
 }
